@@ -1,7 +1,7 @@
 {
   "builders": [{
     "type": "digitalocean",
-    "image_id": 350076,
+    "image": "ubuntu1304",
     "snapshot_name": "docker-{{ .CreateTime }}"
   }],
   "provisioners": [{
