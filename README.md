@@ -1,14 +1,27 @@
-# Docker on Digitalocean
+# Packer Templates
 
-We're running Ubuntu 13.04 (Digitalocean image id 350076) due to the 3.8 kernel.
+This directory contains Packer templates for building machine images that
+represent an Ubuntu target system. This is essentially a stock image
+of Ubuntu 14.04 with Docker installed.
 
-This is an example for running Docker on Digitalocean.
+## Usage
 
-Supply your digitalocean API id and key with the following variables:
+First, [install Packer](http://www.packer.io/intro/getting-started/setup.html).
+Then, clone this repository and `cd` into the `ubuntu-14.04` target
+directory.
 
-    export DIGITALOCEAN_API_KEY=key
-    export DIGITALOCEAN_CLIENT_ID=client_id
+## Vagrant Template
 
-Then run the following command:
+Currently supports:
+ * Virtualbox
 
-    packer build docker.json
+To build a VirtualBox image:
+
+```
+$ packer verify -only=virtualbox-iso vagrant.json
+$ packer build -only=virtualbox-iso vagrant.json
+```
+
+## Then What?
+
+At the end of any of these, you'll have a snapshot or image ready to go.

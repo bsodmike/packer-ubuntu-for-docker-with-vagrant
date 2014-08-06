@@ -1,3 +1,9 @@
+iso/*
+box/*
+output-vmware-iso/*
+*.iso
+*.box
+
 .DS_Store
 *~
 .swo
