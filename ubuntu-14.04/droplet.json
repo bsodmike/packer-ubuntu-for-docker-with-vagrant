@@ -1,0 +1,24 @@
+{
+  "variables": {
+    "do_api_key": "",
+    "do_client_id": ""
+  },
+  "builders": [
+    {
+      "type": "digitalocean",
+      "api_key": "{{user `do_api_key`}}",
+      "client_id": "{{user `do_client_id`}}",
+      "image": "ubuntu-14-04-x64",
+      "snapshot_name": "docker-{{timestamp}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "scripts": [
+        "scripts/upgrade.sh",
+        "scripts/install.sh"
+      ],
+      "type": "shell"
+    }
+  ]
+}

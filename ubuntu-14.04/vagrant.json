@@ -42,22 +42,8 @@
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "scripts": [
         "scripts/vagrant.sh",
-        "scripts/upgrade.sh"
-      ],
-      "type": "shell"
-    },
-    {
-      "override": {
-        "virtualbox-iso": {
-          "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'"
-        }
-      },
-      "script": "scripts/virtualbox.sh",
-      "type": "shell"
-    },
-    {
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
-      "scripts": [
+        "scripts/upgrade.sh",
+        "scripts/virtualbox.sh",
         "scripts/install.sh",
         "scripts/vm_cleanup.sh"
       ],
