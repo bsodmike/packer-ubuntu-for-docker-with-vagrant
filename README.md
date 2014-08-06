@@ -26,6 +26,14 @@ $ packer build -only=virtualbox-iso vagrant.json
 
 At the end of any of these, you'll have a snapshot or image ready to go.
 
+You can either import the box manually or simply boot up the vagrant
+machine 'trusty64' by issuing `vagrant up` in the root of this project
+(where the `Vagrantfile` resides).
+
+```
+-> % vagrant box add trusty64-ubuntu-docker file:///Users/mdesilva/hack_ops/vagrant_base_boxes/trusty-ubuntu-docker_virtualbox.box
+```
+
 ## Reference
 
 * flynn-demo: https://github.com/flynn-archive/flynn-demo/tree/master/packer
