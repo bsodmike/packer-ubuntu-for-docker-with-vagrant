@@ -25,3 +25,7 @@ $ packer build -only=virtualbox-iso vagrant.json
 ## Then What?
 
 At the end of any of these, you'll have a snapshot or image ready to go.
+
+## Reference
+
+* flynn-demo: https://github.com/flynn-archive/flynn-demo/tree/master/packer
