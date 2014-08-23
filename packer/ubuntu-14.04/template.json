@@ -36,6 +36,11 @@
       "virtualbox_version_file": ".vbox_version",
       "output_directory": "../box",
       "vm_name": "ubuntu-docker-template"
+    },
+    {
+      "type": "docker",
+      "image": "ubuntu:trusty",
+      "export_path": "../../../docker_images/docker_base.tar"
     }
   ],
   "provisioners": [
@@ -62,6 +67,7 @@
     {
       "type": "shell",
       "scripts": [
+        "scripts/install_docker.sh",
         "scripts/install.sh"
       ],
       "override": {

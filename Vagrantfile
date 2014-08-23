@@ -15,6 +15,7 @@ Vagrant.configure("2") do |config|
 
     # Share additional folders to the guest VM
     box_config.vm.synced_folder "../../hack", "/home/vagrant/hack", :type => "nfs"
+    box_config.vm.synced_folder "../../hack_ops", "/home/vagrant/hack_ops", :type => "nfs"
     box_config.vm.synced_folder "../docker_images", "/home/vagrant/docker_images", :type => "nfs"
 
   end
