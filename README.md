@@ -6,6 +6,8 @@ of Ubuntu 14.04 with Docker installed.
 
 ## Usage
 
+Required: VirtualBox v4.3.14 (minimum).
+
 First, [install Packer](http://www.packer.io/intro/getting-started/setup.html).
 Then, clone this repository and `cd` into the `ubuntu-14.04` target
 directory.
@@ -18,8 +20,9 @@ Currently supports:
 To build a VirtualBox image:
 
 ```
-$ packer verify -only=virtualbox-iso vagrant.json
-$ packer build -only=virtualbox-iso vagrant.json
+$ cd ubuntu-14.04
+$ packer validate -only=virtualbox-iso template.json
+$ packer build -only=virtualbox-iso template.json
 ```
 
 ## Then What?

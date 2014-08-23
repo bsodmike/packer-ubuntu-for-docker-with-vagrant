@@ -13,6 +13,9 @@ Vagrant.configure("2") do |config|
     box_config.vm.network :forwarded_port, guest: 5000, host: 5000
     box_config.vm.network :forwarded_port, guest: 22, host: 2258
 
+    # Share an additional folder to the guest VM
+    box_config.vm.synced_folder "../../hack", "/vagrant_share", :type => "nfs"
+
   end
 
 end
