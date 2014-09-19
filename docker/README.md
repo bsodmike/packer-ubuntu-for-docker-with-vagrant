@@ -23,8 +23,7 @@ docker build -t inertialbox/mysql ~/hack_ops/packer-digitalocean-docker/docker/m
 # Start a data volume container, mysql-data
 docker run --name mysql-data -v /var/lib/mysql inertialbox/trusty-base /bin/true
 
-# Run an interactive mysql container; note that the `/run.sh` script
-needs to be invoked manually via the bash prompt.
+# Run an interactive mysql container; note that the `/run.sh` script needs to be invoked manually via the bash prompt.
 # --rm passed to remove container on exit; nice n' tidy.
 docker run -ti --rm --volumes-from mysql-data -v /etc/mysql:/etc/mysql --name mysql -p 3306:3306 -e MYSQL_PASS="0mDF30W43I" inertialbox/mysql /bin/bash
 ```
