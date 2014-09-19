@@ -20,7 +20,8 @@ RUN apt-get update && \
     python-dev \
     python-setuptools \
     python-software-properties \
-    software-properties-common
+    software-properties-common \
+    runit || echo
 
 # install essentials
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
