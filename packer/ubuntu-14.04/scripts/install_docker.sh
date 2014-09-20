@@ -11,8 +11,8 @@ apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8
 echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list
 
 # install docker and some useful packages
-apt-get update
-apt-get -y install lxc-docker-0.10.0
+DEBIAN_FRONTEND=noninteractive apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get -y install lxc-docker
 
 # pull docker images
 # TODO
