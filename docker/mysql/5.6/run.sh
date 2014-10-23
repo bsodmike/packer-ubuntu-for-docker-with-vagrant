@@ -15,3 +15,4 @@ else
     echo "=> Using an existing volume of MySQL"
 fi
 
+exec mysqld_safe
