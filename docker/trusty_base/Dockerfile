@@ -21,7 +21,7 @@ RUN apt-get update && \
     python-setuptools \
     python-software-properties \
     software-properties-common \
-    runit || echo
+    mysql-client
 
 # install essentials
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
