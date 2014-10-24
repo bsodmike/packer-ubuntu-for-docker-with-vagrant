@@ -6,7 +6,10 @@ of Ubuntu 14.04 with Docker installed.
 
 ## Usage
 
-Required: VirtualBox v4.3.14 (minimum).
+Required:
+
+* VirtualBox v4.3.14 (minimum).
+* `iso/ubuntu-14.04.1-server-amd64.iso` at the root of this repository.
 
 First, [install Packer](http://www.packer.io/intro/getting-started/setup.html).
 Then, clone this repository and `cd` into the `packer/ubuntu-14.04` target
@@ -62,7 +65,7 @@ $ cd packer/ubuntu-14.04
 $ packer build -only=docker template.json
 $ cd ~
 $ cat docker_images/inertialbox_docker_base.tar | sudo docker import - inertialbox/base
-$ docker run -t -i inertialbox/base /bin/bash
+$ docker run -ti --rm --name=base inertialbox/base /bin/bash
 ```
 
 ## Reference
