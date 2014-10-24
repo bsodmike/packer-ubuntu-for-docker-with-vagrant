@@ -27,6 +27,9 @@ ONBUILD ADD Gemfile /home/app/Gemfile
 ONBUILD ADD Gemfile.lock /home/app/Gemfile.lock
 ONBUILD RUN bundle install --without development test
 ONBUILD ADD . /home/app
+ONBUILD RUN mkdir -p /home/app/public/assets
+ONBUILD RUN bundle exec rake assets:precompile
+ONBUILD RUN chown -R www-data:www-data /home/app/public/assets
 
 # Add default unicorn config
 ADD unicorn.rb /home/app/config/unicorn.rb
@@ -36,4 +39,4 @@ ADD Procfile /home/app/Procfile
 
 ENV RAILS_ENV production
 
-CMD bundle exec rake assets:precompile && foreman start -f Procfile
+CMD foreman start -f Procfile
