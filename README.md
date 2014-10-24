@@ -30,7 +30,8 @@ $ packer build -only=<builder> template.json
 
 Once the build is completed, move the `*.box` image to the path
 specified within the `Vagrantfile` located at the root of this project.
-By default this path is file:///Users/mdesilva/hack_ops/vagrant_base_boxes/trusty-ubuntu-docker_virtualbox.box
+By default this path is
+`file:///Users/mdesilva/hack_ops/vagrant_base_boxes/trusty-ubuntu-docker_1.2.0.box`
 
 The `Vagrantfile` has been configured to import a vagrant box from the
 above image; simply issue the following:
