@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 
     # Every Vagrant virtual environment requires a box to build off of.
     box_config.vm.box = "trusty64-ubuntu-docker-1.2.0"
-    box_config.vm.box_url = "file:///Users/mdesilva/hack_ops/vagrant_base_boxes/trusty-ubuntu-docker-1.2.0.box"
+    box_config.vm.box_url = "file:///Volumes/inertialbox/hack_ops/vagrant_base_boxes/trusty-ubuntu-docker-1.2.0.box"
 
     box_config.vm.network :private_network, ip: "10.33.33.33"
     box_config.vm.network :forwarded_port, guest: 5000, host: 5000
